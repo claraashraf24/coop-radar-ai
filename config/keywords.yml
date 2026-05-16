@@ -1,0 +1,62 @@
+coop_keywords:
+  - co-op
+  - coop
+  - intern
+  - internship
+  - student
+  - work term
+  - placement
+
+fall_2026_keywords:
+  - fall 2026
+  - september 2026
+  - sept 2026
+  - sep 2026
+  - 2026 fall
+
+role_keywords:
+  - artificial intelligence
+  - ai
+  - machine learning
+  - ml
+  - deep learning
+  - nlp
+  - data science
+  - data analyst
+  - software developer
+  - software engineer
+  - backend
+  - full stack
+  - python
+  - sql
+  - cloud
+  - devops
+  - mlops
+  - automation
+
+ontario_keywords:
+  - ontario
+  - toronto
+  - mississauga
+  - oakville
+  - milton
+  - waterloo
+  - kitchener
+  - ottawa
+  - hamilton
+  - brampton
+
+exclude_keywords:
+  - senior
+  - sr.
+  - lead
+  - tech lead
+  - principal
+  - staff
+  - manager
+  - director
+  - head of
+  - architect
+  - 5+ years
+  - 7+ years
+  - 10+ years
