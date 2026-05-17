@@ -13,6 +13,7 @@ from matching.keyword_matcher import detect_keywords
 from matching.scoring import calculate_match_score
 from collectors.adzuna_collector import fetch_adzuna_jobs
 from storage.exporter import export_jobs_to_csv
+from matching.category_classifier import classify_job_category
 
 
 def load_yaml(path):
@@ -77,7 +78,10 @@ def main():
             job = detect_fall_2026(job)
 
             detected_skills = detect_keywords(job, role_keywords)
+
             job["skills_detected"] = ", ".join(detected_skills)
+
+            job["job_category"] = classify_job_category(job)
 
             job = calculate_match_score(
                 job,

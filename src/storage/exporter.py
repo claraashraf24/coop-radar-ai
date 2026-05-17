@@ -21,6 +21,7 @@ def export_jobs_to_csv():
             remote_type,
             source,
             category,
+            job_category,
             skills_detected,
             match_score,
             is_coop,

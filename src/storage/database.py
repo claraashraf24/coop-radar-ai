@@ -31,6 +31,7 @@ def create_jobs_table():
             is_coop INTEGER,
             is_fall_2026 INTEGER,
             category TEXT,
+            job_category TEXT,
             skills_detected TEXT,
             match_score INTEGER,
             date_found TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -63,10 +64,11 @@ def insert_job(job):
             is_coop,
             is_fall_2026,
             category,
+            job_category,
             skills_detected,
             match_score
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     """, (
         job.get("title"),
         job.get("company"),
@@ -83,6 +85,7 @@ def insert_job(job):
         job.get("is_coop"),
         job.get("is_fall_2026"),
         job.get("category"),
+        job.get("job_category"),
         job.get("skills_detected"),
         job.get("match_score"),
     ))

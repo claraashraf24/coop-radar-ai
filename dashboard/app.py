@@ -55,6 +55,9 @@ selected_companies = st.sidebar.multiselect("Company", companies)
 sources = sorted(df["source"].dropna().unique())
 selected_sources = st.sidebar.multiselect("Source", sources)
 
+categories = sorted(df["job_category"].dropna().unique())
+selected_categories = st.sidebar.multiselect("Job Category", categories)
+
 search_text = st.sidebar.text_input("Search title / skills / company")
 
 filtered_df = df.copy()
@@ -77,6 +80,10 @@ if selected_companies:
 
 if selected_sources:
     filtered_df = filtered_df[filtered_df["source"].isin(selected_sources)]
+
+if selected_categories:
+    filtered_df = filtered_df[filtered_df["job_category"].isin(selected_categories)]
+
 
 if search_text:
     search_text = search_text.lower()
@@ -146,6 +153,7 @@ display_columns = [
     "title",
     "company",
     "location",
+    "job_category",
     "source",
     "skills_detected",
     "match_score",
@@ -163,7 +171,8 @@ table_df = table_df.rename(columns={
     "skills_detected": "Skills Detected",
     "match_score": "Score",
     "is_fall_2026": "Fall 2026",
-    "job_url": "Apply Link"
+    "job_url": "Apply Link",
+    "job_category": "Category",
 })
 
 st.dataframe(
@@ -190,6 +199,7 @@ for _, job in filtered_df.head(20).iterrows():
         with col1:
             st.markdown(f"### {job['title']}")
             st.write(f"**Company:** {job['company']}")
+            st.write(f"**Category:** {job.get('job_category', 'Other')}")
             st.write(f"**Location:** {job['location']}")
             st.write(f"**Source:** {job['source']}")
             st.write(f"**Skills:** {job.get('skills_detected', 'N/A')}")
