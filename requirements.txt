@@ -4,3 +4,5 @@ pyyaml
 pandas
 streamlit
 plotly
+PyPDF2
+scikit-learn
